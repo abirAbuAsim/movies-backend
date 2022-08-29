@@ -1,4 +1,4 @@
-export enum MOVIE_GENRE {
+export enum MovieGenre {
     DRAMA  = 'Drama',
     ACTION = 'ACTION',
 }
