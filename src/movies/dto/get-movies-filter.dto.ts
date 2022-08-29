@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsEnum, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { MOVIE_GENRE } from "../movie-genre.enum";
 
 export class GetMoviesFilterDto {
@@ -6,5 +6,6 @@ export class GetMoviesFilterDto {
     @IsString()
     name?: string;
 
+    @IsEnum(MOVIE_GENRE)
     genre?: MOVIE_GENRE
 }
