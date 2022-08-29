@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { CreateMovieDto } from './dto/create-movie.dto';
 import { GetMoviesFilterDto } from './dto/get-movies-filter.dto';
 import { MovieGenre } from './movie-genre.enum';
 import { Movie } from './movie.entity';
@@ -13,6 +14,10 @@ export class MoviesService {
     ){}
 
     getMovies(filterDto: GetMoviesFilterDto): Promise<Movie[]> {
-        return this.moviesRepository.getTasks(filterDto);
+        return this.moviesRepository.getMovies(filterDto);
+    }
+
+    createTask(createMovieDto: CreateMovieDto): Promise<Movie> {
+        return this.moviesRepository.createTask(createMovieDto);
     }
 }

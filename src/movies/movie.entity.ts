@@ -3,7 +3,7 @@ import { MovieGenre } from "./movie-genre.enum";
 
 @Entity()
 export class Movie {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column()
