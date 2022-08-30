@@ -11,9 +11,12 @@ export class MoviesRepository extends Repository<Movie> {
   }
 
   async getMovies(filterDto: GetMoviesFilterDto): Promise<Movie[]> {
-      const { name } = filterDto;
+      const { name, page, limit, sort, orderBy} = filterDto;
   
       const query = this.createQueryBuilder('movie');
+      query.limit(limit);
+      query.offset(limit*(page-1));
+      query.orderBy('movie.'+orderBy, sort)
   
       if (name) {
         query.andWhere(
