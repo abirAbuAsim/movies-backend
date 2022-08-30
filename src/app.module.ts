@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MoviesModule } from './movies/movies.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { MoviesModule } from './movies/movies.module';
       database: 'movies-db',
       autoLoadEntities: true,
       synchronize: true
-    })
+    }),
+    AuthModule
   ],
   controllers: [],
   providers: [],

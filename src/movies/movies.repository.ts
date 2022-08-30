@@ -17,7 +17,7 @@ export class MoviesRepository extends Repository<Movie> {
   
       if (name) {
         query.andWhere(
-          '(LOWER(movie.name) LIKE LOWER(:search) OR LOWER(task.description) LIKE LOWER(:name))',
+          '(LOWER(movie.name) LIKE LOWER(:name))',
           { name: `%${name}%` },
         );
       }
