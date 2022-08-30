@@ -1,11 +1,14 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Logger, Post, Query, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { GetMoviesFilterDto } from './dto/get-movies-filter.dto';
 import { Movie } from './movie.entity';
 import { MoviesService } from './movies.service';
 
 @Controller('movies')
+@UseGuards(AuthGuard('jwt'))
 export class MoviesController {
+    private logger = new Logger('MoviesController');
     constructor(private moviesService: MoviesService){}
 
     @Get()
