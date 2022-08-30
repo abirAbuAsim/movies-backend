@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { MovieGenre } from "./movie-genre.enum";
+import { MovieGenre } from "./enums/movie-genre.enum";
 
 @Entity()
 export class Movie {

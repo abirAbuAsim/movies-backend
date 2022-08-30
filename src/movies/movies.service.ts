@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { GetMoviesFilterDto } from './dto/get-movies-filter.dto';
-import { MovieGenre } from './movie-genre.enum';
 import { Movie } from './movie.entity';
 import { MoviesRepository } from './movies.repository';
 

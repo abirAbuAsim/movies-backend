@@ -1,5 +1,5 @@
 import { IsNotEmpty } from "class-validator";
-import { MovieGenre } from "../movie-genre.enum";
+import { MovieGenre } from "../enums/movie-genre.enum";
 
 export class CreateMovieDto {
     @IsNotEmpty()
